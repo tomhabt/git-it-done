@@ -8,7 +8,7 @@ var formSubmitHandler = function(event) {
   event.preventDefault();
 
   // get value from input element
-  var username = nameInputEl.value.trim();
+  var username = nameInputEl.value.trim().toLowerCase();
 
   if (username) {
     getUserRepos(username);
@@ -24,7 +24,7 @@ var formSubmitHandler = function(event) {
 var getUserRepos = function(user) {
   // format the github api url
   var apiUrl = "https://api.github.com/users/" + user + "/repos";
-
+  console.log(apiUrl )
   // make a get request to url
   fetch(apiUrl)
     .then(function(response) {
@@ -36,7 +36,8 @@ var getUserRepos = function(user) {
           displayRepos(data, user);
         });
       } else {
-        alert("Error: " + response.statusText);
+        console.log(response);
+        alert("Username not found" );
       }
     })
     .catch(function(error) {
@@ -46,12 +47,11 @@ var getUserRepos = function(user) {
 
 var displayRepos = function(repos, searchTerm) {
   // check if api returned any repos
-  if (repos.length === 0) {
-    repoContainerEl.textContent = "No repositories found.";
+   repoSearchTerm.textContent = `GitHub Username:` + " " + searchTerm;
+   if (repos.length === 0) {
+    repoContainerEl.textContent = "No repositories were found with above username";
     return;
   }
-
-  repoSearchTerm.textContent = searchTerm;
 
   // loop over repos
   for (var i = 0; i < repos.length; i++) {

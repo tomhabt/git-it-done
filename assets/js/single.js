@@ -10,7 +10,6 @@ var getRepoName = function() {
   if (repoName) {
     // display repo name on the page
     repoNameEl.textContent = repoName;
-
     getRepoIssues(repoName);
   } else {
     // if no repo was given, redirect to the homepage
@@ -24,9 +23,11 @@ var getRepoIssues = function(repo) {
 
   // make a get request to url
   fetch(apiUrl).then(function(response) {
+    console.log(response)
     // request was successful
     if (response.ok) {
       response.json().then(function(data) {
+        console.log(data)
         displayIssues(data);
 
         // check if api has paginated issues
@@ -35,6 +36,7 @@ var getRepoIssues = function(repo) {
         }
       });
     } else {
+      alert("There was a problem with your request!")
       // if not successful, redirect to homepage
       document.location.replace("./index.html");
     }
@@ -69,7 +71,7 @@ var displayIssues = function(issues) {
     if (issues[i].pull_request) {
       typeEl.textContent = "(Pull request)";
     } else {
-      typeEl.textContent = "(Issue)";
+      typeEl.textContent = "(Issue title)";
     }
 
     // append to container
@@ -77,7 +79,7 @@ var displayIssues = function(issues) {
 
     // append to the dom
     issueContainerEl.appendChild(issueEl);
-  }
+  };
 };
 
 var displayWarning = function(repo) {
@@ -95,3 +97,8 @@ var displayWarning = function(repo) {
 };
 
 getRepoName();
+
+
+
+
+
