@@ -31,7 +31,7 @@
    
   ## Badges
   This project has a badge.
-  ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+  ![image](https://user-images.githubusercontent.com/84083304/160744608-8fdfcaf6-f3a8-446f-a18f-834637aae20b.jpg)
   
   ## Usage
   In order to use this app, just download the files packade and open the index.html file in your browser.
