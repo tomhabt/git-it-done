@@ -2,6 +2,34 @@ var userFormEl = document.querySelector("#user-form");
 var nameInputEl = document.querySelector("#username");
 var repoContainerEl = document.querySelector("#repos-container");
 var repoSearchTerm = document.querySelector("#repo-search-term");
+var languageButtonsEl = document.querySelector("#language-buttons");
+
+var buttonClickHandler = function(event) {
+  event.preventDefault();
+  var language = event.target.getAttribute("data-language");
+  console.log(language);
+  getFeaturedRepos(language);
+   // clear old content
+   repoContainerEl.textContent = "";
+}
+languageButtonsEl.addEventListener("click", buttonClickHandler);
+
+var getFeaturedRepos = function(language) {
+  var apiUrl = "https://api.github.com/search/repositories?q=" + language + "+is:featured&sort=help-wanted-issues";
+  var reply = fetch(apiUrl);
+  reply.then(function (response){
+    if (response.ok){
+      response.json().then(function(data) {
+        console.log(data);
+        displayRepos(data.items, language);
+      })
+    } else {
+      alert("Error:GitHub user not found")
+    }
+  })
+};
+
+
 
 var formSubmitHandler = function(event) {
   // prevent page from refreshing
@@ -47,7 +75,7 @@ var getUserRepos = function(user) {
 
 var displayRepos = function(repos, searchTerm) {
   // check if api returned any repos
-   repoSearchTerm.textContent = `GitHub Username:` + " " + searchTerm;
+   repoSearchTerm.textContent = `GitHub Username/Language:` + " " + searchTerm;
    if (repos.length === 0) {
     repoContainerEl.textContent = "No repositories were found with above username";
     return;
