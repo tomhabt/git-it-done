@@ -3,12 +3,12 @@
   https://github.com/tomhabt/git-it-done.git
 
   ## Description
- A Node.js application that asks for your input and creates an HTML page with it. The app is running from the command line to provide and then recieve a serious of answers from  provided questions. Once the neccessary arguments are reacieved from the client-side, a webpage will be generated dynamically from the detail information gatehred from the client. This app is created based on the Vital Node.js to demonstrate its powerful capability of being a run time environment to perfom web applications. The back end is well organised to follow the best practice of handling data and data transfer.
+ A web app that uses GitHub's API to search for open source projects with open issues and pull requests. Consider a website like Facebook or Twitter, where new posts, pictures, and comments load into view as the user scrolls down the page. To retrieve that data as needed, these websites make requests to their own servers via server-side APIs. Some companies make their server-side APIs public; other websites can then use those public APIs to make the same requests and load third-party data into their own apps. This project mainly uses GitHub API for fetching repos and issue ralated. 
  
- ![image](https://user-images.githubusercontent.com/84083304/155044962-1054e050-3049-49a6-a73d-bb169f5ab515.png)
+ ![image]((https://user-images.githubusercontent.com/84083304/160744608-8fdfcaf6-f3a8-446f-a18f-834637aae20b.jpg)
    
   ## Credits
-  Contributors AskBCS from 2u Technologies, Contributed on: **Debugging the codes.**
+  Contributors  2u Technologies, Contributed on: **Supplying start up codes, CSS and note steps**
   ## Table of Contents 
   * [Methods](#methods) 
   * [Installation](#installation) 
@@ -20,10 +20,10 @@
   * [Questions](#questions)
   
   ## Methods
-  The following methods were used to run the application properly: **FS,Inquirer,Node**.
+  The following methods were used to run the application properly: **fetch API promises,and GitHub open source api**.
    
   ## Installation
-  The following necessary dependencies must be installed to run the application properly: **Inquirer and Node**. 
+  No installation required. 
   ## License
   This project is licensed.  
   ![GitHub license]( 
@@ -34,13 +34,13 @@
   ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
   
   ## Usage
-  In order to use this app, **To generate a standardized portfolio page using command line series of questions what to or not to include in the page.**.
+  In order to use this app, just download the files packade and open the index.html file in your browser.
    
   ## Special-instruction
-  The following special instruction must me followed: **Always run node app.js in the project directory.**.
+  The following special instruction must me followed: None.
 
   ## Technologies 
-  The following technologies being used: **JavaScript,ES6,Node**.
+  The following technologies being used: **JavaScript,ES6,Browser built-in methods like fetch, event listeners etc...**.
 
   ## Contribution
   Made with ❤️ by Thomas Habtemariam.
